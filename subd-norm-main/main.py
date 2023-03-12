@@ -96,11 +96,10 @@ def create_table():
             global heads
             def add():
                 global heads
-                heads += E_newcreate.get()
-                print(len(heads))
+                heads.append(E_newcreate.get())
                 if len(heads) >= n:
                     red.destroy()
-                    table = ttk.Treeview(frame_view, show='headings')  # дерево выполняющее свойство таблицы
+                    table = ttk.Treeview(frame_new_view, show='headings')  # дерево выполняющее свойство таблицы
                     table['columns'] = heads
                     for header in heads:
                             table.heading(header, text=header, anchor='center')
